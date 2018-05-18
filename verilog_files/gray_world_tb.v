@@ -6,6 +6,7 @@
 // Create Date: 17/05/18
 // Design Name: gray_world_tb
 ////////////////////////////////////////////////////////////////////////////////
+`include "parameters.vh"
 
 module gray_world_tb( );
 
@@ -24,12 +25,7 @@ module gray_world_tb( );
     wire read_done;
     `define PERIOD 5      // 100 MHz clock 
 	
-	reg frame_rst;
-	
-	localparam Nrows = 550;
-	localparam Ncol  = 367;
-	
-	
+
 	initial begin
     clk       <= 0;                              
     forever #(`PERIOD)  clk =  ! clk; 
@@ -83,12 +79,7 @@ module gray_world_tb( );
 		  $fclose(fidG);
 		  $fclose(fidB); 
 		  
-			//@(read_done);
-	 
-		
-	  
-	 
-          
+	       
       #50000 $stop;                                                
     end                
   
