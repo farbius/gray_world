@@ -44,7 +44,6 @@ module gray_world_tb( );
   
    initial begin 
      rst       <= 1;
-	 frame_rst <= 1;
          @ (reset_trigger); 
          @ (posedge clk) rst <= 1;             
          repeat (20) begin
